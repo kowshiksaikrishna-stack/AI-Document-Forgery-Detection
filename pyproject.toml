@@ -11,3 +11,6 @@ dependencies = [
     "mysql-connector-python",
     "python-dotenv"
 ]
+
+[tool.vercel]
+entrypoint = "backend.main:app"
