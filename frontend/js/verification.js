@@ -1,4 +1,4 @@
-﻿const API_URL = "http://127.0.0.1:8000/api/verification/verify";
+﻿const API_URL = "/api/verification/verify";
 
 const documentInput = document.getElementById("documentInput");
 const analyzeButton = document.getElementById("analyzeBtn");

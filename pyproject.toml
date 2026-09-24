@@ -5,9 +5,9 @@ description = "AI-based document forgery detection and verification system"
 requires-python = ">=3.11,<3.13"
 dependencies = [
     "fastapi",
-    "uvicorn",
-    "python-multipart"
+    "python-multipart",
+    "pydantic",
+    "email-validator",
+    "mysql-connector-python",
+    "python-dotenv"
 ]
-
-[tool.vercel]
-entrypoint = "backend.main:app"
