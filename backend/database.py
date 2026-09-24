@@ -1,6 +1,3 @@
-import mysql.connector
-from mysql.connector import Error
-
 from backend.config import (
     MYSQL_HOST,
     MYSQL_PORT,
@@ -11,6 +8,8 @@ from backend.config import (
 
 
 def get_connection():
+    import mysql.connector
+
     return mysql.connector.connect(
         host=MYSQL_HOST,
         port=MYSQL_PORT,
@@ -31,7 +30,7 @@ def test_connection():
 
         return False
 
-    except Error:
+    except Exception:
         return False
 
     finally:
