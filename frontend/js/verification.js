@@ -1,5 +1,5 @@
 ﻿const LOCAL_API_BASE_URL = "http://127.0.0.1:8000";
-const DEPLOYED_API_BASE_URL = "https://ai-document-forgery-detection-cavxwrbi0-kowshiksaikrishna-stack.vercel.app";
+const DEPLOYED_API_BASE_URL = "https://ai-document-forgery-detection.vercel.app";
 const isLocalFrontend = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 const API_URL = `${isLocalFrontend ? LOCAL_API_BASE_URL : DEPLOYED_API_BASE_URL}/api/verification/verify`;
 
