@@ -64,7 +64,12 @@ PORT = int(
 # DIRECTORIES
 # ============================================================
 
-UPLOADS_DIR = PROJECT_ROOT / "uploads"
+UPLOADS_DIR = Path(
+    os.getenv(
+        "UPLOADS_DIR",
+        "/tmp/uploads" if os.getenv("VERCEL") else str(PROJECT_ROOT / "uploads")
+    )
+)
 
 DOCUMENT_UPLOAD_DIR = (
     UPLOADS_DIR / "documents"
