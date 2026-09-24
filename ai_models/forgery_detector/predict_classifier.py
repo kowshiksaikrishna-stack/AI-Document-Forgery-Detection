@@ -4,13 +4,28 @@ from pathlib import Path
 import sys
 
 import numpy as np
-import tensorflow as tf
+
+try:
+    import tensorflow as tf
+except ImportError:
+    tf = None
+
+try:
+    from ai_edge_litert.interpreter import Interpreter
+except ImportError:
+    Interpreter = None
 
 
 MODEL_PATH = (
     Path(__file__).resolve().parent /
     "model" /
     "forgery_detector.keras"
+)
+
+TFLITE_MODEL_PATH = (
+    Path(__file__).resolve().parent /
+    "model" /
+    "forgery_detector.tflite"
 )
 
 
@@ -22,30 +37,31 @@ def predict(image_path):
             f"Model not found: {MODEL_PATH}"
         )
 
-    model = tf.keras.models.load_model(
-        MODEL_PATH
-    )
+    if tf is not None:
+        model = tf.keras.models.load_model(MODEL_PATH)
+        image = tf.keras.utils.load_img(image_path, target_size=(224, 224))
+        image = tf.keras.utils.img_to_array(image)
+        image = np.expand_dims(image, axis=0)
+        probability = float(model.predict(image, verbose=0)[0][0])
+    else:
+        if Interpreter is None or not TFLITE_MODEL_PATH.exists():
+            raise RuntimeError(
+                "No TensorFlow or TensorFlow Lite forgery runtime is available."
+            )
 
-    image = tf.keras.utils.load_img(
-        image_path,
-        target_size=(224, 224)
-    )
+        from PIL import Image
 
-    image = tf.keras.utils.img_to_array(
-        image
-    )
-
-    image = np.expand_dims(
-        image,
-        axis=0
-    )
-
-    probability = float(
-        model.predict(
-            image,
-            verbose=0
-        )[0][0]
-    )
+        interpreter = Interpreter(model_path=str(TFLITE_MODEL_PATH))
+        interpreter.allocate_tensors()
+        input_details = interpreter.get_input_details()[0]
+        output_details = interpreter.get_output_details()[0]
+        image = Image.open(image_path).convert("RGB").resize((224, 224))
+        image = np.expand_dims(np.asarray(image, dtype=np.float32), axis=0)
+        interpreter.set_tensor(input_details["index"], image)
+        interpreter.invoke()
+        probability = float(
+            interpreter.get_tensor(output_details["index"])[0][0]
+        )
 
     if probability >= 0.5:
 

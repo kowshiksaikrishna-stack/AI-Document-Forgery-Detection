@@ -9,7 +9,10 @@ dependencies = [
     "pydantic",
     "email-validator",
     "mysql-connector-python",
-    "python-dotenv"
+    "python-dotenv",
+    "numpy",
+    "pillow",
+    "ai-edge-litert"
 ]
 
 [tool.vercel]
