@@ -1,2 +1,15 @@
+[project]
+name = "ai-document-forgery-detection"
+version = "1.0.0"
+description = "AI-based document forgery detection and verification system"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+    "tensorflow",
+    "web3"
+]
+
 [tool.vercel]
 entrypoint = "backend.main:app"
