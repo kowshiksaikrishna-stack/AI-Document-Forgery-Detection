@@ -2,6 +2,9 @@
 
 **Smart India Hackathon problem statement:** `2026188`  
 **Prototype status:** Working research and demonstration prototype
+## 🚀 Live Demo
+
+[Open Live Demo] (https://ai-document-forgery-detection-f6hf.vercel.app)
 
 ## 1. Problem and Proposed Solution
 
