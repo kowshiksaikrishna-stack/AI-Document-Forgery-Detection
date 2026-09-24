@@ -1,0 +1,1 @@
+# ai_models/forgery_detector/__init__.py

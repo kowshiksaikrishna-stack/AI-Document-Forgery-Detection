@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Verify Document - AI Scanner</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/verification.css?v=4">
+
+</head>
+
+
+<body>
+
+<div class="app-layout">
+
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                AI
+            </div>
+
+            <span>AI SCANNER</span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a
+                href="verification.html"
+                class="active"
+            >
+                📄 Verify Document
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a
+                href="#"
+                id="logoutLink"
+            >
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="verification-main">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Verify Document</h1>
+
+                <p>
+                    Upload your document and analyze it
+                    using the AI forgery detector.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <section class="verification-card">
+
+
+            <div class="upload-area">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h2>
+                    Select Document
+                </h2>
+
+                <p>
+                    JPG, JPEG, PNG or WEBP
+                </p>
+
+
+                <label
+                    for="documentInput"
+                    class="choose-button"
+                >
+                    Choose File
+                </label>
+
+
+                <input
+                    type="file"
+                    id="documentInput"
+                    accept=".jpg,.jpeg,.png,.webp"
+                    hidden
+                >
+
+
+                <div
+                    id="fileName"
+                    class="file-name"
+                >
+                    No file selected
+                </div>
+
+            </div>
+
+
+            <div
+                id="preview"
+                class="document-preview"
+            ></div>
+
+
+            <div class="verification-actions">
+
+                <button
+                    type="button"
+                    id="analyzeBtn"
+                    class="btn btn-primary analyze-button"
+                >
+                    Analyze & Verify
+                </button>
+
+
+                <button
+                    type="button"
+                    id="clearBtn"
+                    class="btn clear-button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                id="loadingMessage"
+                class="loading-message"
+            >
+                Analyzing document...
+            </div>
+
+
+            <div
+                id="errorMessage"
+                class="error-message"
+            ></div>
+
+
+            <!-- RESULT ON SAME PAGE -->
+
+            <div id="result" class="result">
+                <div class="result-shell">
+                    <div class="result-banner">
+                        <span class="result-banner-icon">▣</span>
+                        <span>DOCUMENT VERIFICATION</span>
+                    </div>
+                    <button type="button" id="closeResultBtn" class="result-close" aria-label="Close verification result">Close</button>
+                    <div class="result-content">
+                        <section class="result-panel preview-panel">
+                            <h2><span class="panel-icon">▧</span> DOCUMENT PREVIEW</h2>
+                            <div class="result-preview-frame"><img id="resultPreview" alt="Verified document preview"></div>
+                        </section>
+                        <section class="result-panel verification-panel">
+                            <h2><span class="panel-icon success-icon">✓</span> VERIFICATION RESULT</h2>
+                            <div id="resultHeader" class="result-header">
+                                <div class="status-mark">✓</div>
+                                <div id="resultStatus" class="result-status">-</div>
+                                <div id="resultMessage" class="result-message">-</div>
+                            </div>
+                            <div class="metric-row"><div class="metric-heading"><span>▥</span><strong>Verification Score</strong><b id="scoreNumber">0.00%</b></div><div class="metric-track"><span id="scoreBar"></span></div></div>
+                            <div class="metric-row"><div class="metric-heading"><span>✓</span><strong>Genuine Probability</strong><b id="genuineProbability">0.00%</b></div><div class="metric-track"><span id="genuineBar"></span></div></div>
+                            <div class="metric-row fake-metric"><div class="metric-heading"><span>△</span><strong>Fake Probability</strong><b id="fakeProbability">0.00%</b></div><div class="metric-track"><span id="fakeBar"></span></div></div>
+                            <div class="analysis-row"><span class="brain-icon">♧</span><strong>AI Analysis</strong><b id="analysisStatus">-</b></div>
+                        </section>
+                    </div>
+                    <div class="result-file-row"><span class="file-icon">▤</span><strong>File: <span id="selectedFile">-</span></strong></div>
+                    <div class="result-note"><span class="info-icon">i</span><span id="resultNote">The AI model detected a higher probability of a genuine document.</span></div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/common.js"></script>
+<script src="js/verification.js?v=4"></script>
+
+</body>
+</html>

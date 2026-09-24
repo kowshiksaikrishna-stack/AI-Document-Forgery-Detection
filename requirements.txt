@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+email-validator
+mysql-connector-python
+python-dotenv
+pillow
+opencv-python
+pytesseract
+web3

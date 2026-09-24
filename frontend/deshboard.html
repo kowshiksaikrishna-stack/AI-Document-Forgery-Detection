@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - AI Scanner</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">AI</div>
+            <span>AI SCANNER</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="active">
+                🏠 Dashboard
+            </a>
+
+            <a href="verification.html">
+                📄 Verify Document
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutLink">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome back!
+                </p>
+            </div>
+
+
+            <div class="user-info">
+
+                <div class="avatar">
+                    U
+                </div>
+
+                <div>
+
+                    <strong id="dashboardUsername">
+                        User
+                    </strong>
+
+                    <small>
+                        Student
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">
+                    📄
+                </span>
+
+                <div>
+
+                    <strong id="documentsScanned">
+                        0
+                    </strong>
+
+                    <span>
+                        Documents Scanned
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon green">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong id="verifiedDocuments">
+                        0
+                    </strong>
+
+                    <span>
+                        Verified Documents
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon red">
+                    !
+                </span>
+
+                <div>
+
+                    <strong id="suspiciousDocuments">
+                        0
+                    </strong>
+
+                    <span>
+                        Suspicious Documents
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-icon blue">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>
+                        100%
+                    </strong>
+
+                    <span>
+                        System Status
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="quick-section">
+
+            <h2>Quick Actions</h2>
+
+            <div class="quick-grid">
+
+                <a
+                    href="verification.html"
+                    class="quick-card blue"
+                >
+
+                    <span>🔍</span>
+
+                    <strong>
+                        Scan Document
+                    </strong>
+
+                    <small>
+                        Upload & Verify
+                    </small>
+
+                </a>
+
+
+                <a
+                    href="verification.html"
+                    class="quick-card green"
+                >
+
+                    <span>✓</span>
+
+                    <strong>
+                        Verify Document
+                    </strong>
+
+                    <small>
+                        AI verification
+                    </small>
+
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="quick-card purple"
+                >
+
+                    <span>👤</span>
+
+                    <strong>
+                        My Profile
+                    </strong>
+
+                    <small>
+                        Manage account
+                    </small>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="quick-card orange"
+                >
+
+                    <span>?</span>
+
+                    <strong>
+                        Help & Support
+                    </strong>
+
+                    <small>
+                        Get assistance
+                    </small>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="info-panel">
+
+            <h2>
+                Document Verification
+            </h2>
+
+            <p>
+                Upload an identity document and let the
+                AI model analyze it for possible forgery.
+            </p>
+
+            <a
+                href="verification.html"
+                class="btn btn-primary"
+            >
+                Start Verification
+            </a>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/common.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

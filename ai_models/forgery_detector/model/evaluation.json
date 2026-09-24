@@ -1,0 +1,14 @@
+{
+    "accuracy": 0.8666666666666667,
+    "classification_report": "              precision    recall  f1-score   support\n\n     genuine     0.7895    1.0000    0.8824        45\n        fake     1.0000    0.7333    0.8462        45\n\n    accuracy                         0.8667        90\n   macro avg     0.8947    0.8667    0.8643        90\nweighted avg     0.8947    0.8667    0.8643        90\n",
+    "confusion_matrix": [
+        [
+            45,
+            0
+        ],
+        [
+            12,
+            33
+        ]
+    ]
+}

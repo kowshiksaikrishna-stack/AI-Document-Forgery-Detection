@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - AI Scanner</title>
+    <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+
+<body class="profile-page">
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">AI</div>
+                <span>AI SCANNER</span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Main navigation">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="verification.html">📄 Verify Document</a>
+                <a href="dashboard.html#history">🕘 History</a>
+                <a href="profile.html" class="active">👤 Profile</a>
+                <a href="#" id="logoutLink">🚪 Logout</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-main profile-main">
+            <header class="dashboard-header profile-header">
+                <div>
+                    <h1>My Profile</h1>
+                    <p>View and update your account details.</p>
+                </div>
+            </header>
+
+            <section class="profile-layout" aria-label="Profile details">
+                <article class="profile-card profile-summary">
+                    <div class="profile-avatar" id="profileAvatar">U</div>
+                    <div class="profile-details">
+                        <h2 id="profileName">User</h2>
+                        <p id="profileRole">Student</p>
+                        <strong id="profileSummaryEmail">-</strong>
+                    </div>
+                </article>
+
+                <article class="profile-card profile-form-card">
+                    <form id="profileForm" class="profile-form">
+                        <label for="profileFullName">Full Name</label>
+                        <input id="profileFullName" type="text" autocomplete="name" required>
+
+                        <label for="profileUsernameInput">Username</label>
+                        <input id="profileUsernameInput" type="text" autocomplete="username" required>
+
+                        <label for="profileEmailInput">Email</label>
+                        <input id="profileEmailInput" type="email" autocomplete="email" required>
+
+                        <label for="profilePassword">Change Password</label>
+                        <input id="profilePassword" type="password" placeholder="New password" minlength="4" autocomplete="new-password">
+
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                        <div id="profileMessage" class="form-message" role="status"></div>
+                    </form>
+                </article>
+            </section>
+
+            <section class="info-panel profile-account-panel">
+                <h2>Account</h2>
+                <p>Your account is ready for document verification.</p>
+                <a href="verification.html" class="btn btn-primary">Verify a Document</a>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/common.js?v=2"></script>
+</body>
+</html>

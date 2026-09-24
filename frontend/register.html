@@ -1,0 +1,72 @@
+﻿ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register - AI Scanner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css?v=2">
+ </head>
+
+<body class="auth-page">
+
+<div class="auth-container">
+
+    <div class="auth-brand">
+        <div class="auth-shield">AI</div>
+        <h1>AI SCANNER</h1>
+        <p>
+            Create Your Account<br>
+            Start Verifying Securely
+        </p>
+        <div class="auth-brand-mark">✓</div>
+        <small>"Join us in building a safer digital world."</small>
+    </div>
+
+    <div class="auth-form-container">
+        <div class="auth-form">
+            <h2>Create Account</h2>
+            <p class="auth-subtitle">Fill in your details to get started</p>
+
+            <form id="registerForm">
+                <label for="fullName">Full Name</label>
+                <div class="auth-input-wrap">
+                    <span aria-hidden="true">♙</span>
+                    <input id="fullName" type="text" placeholder="Enter your full name" required>
+                </div>
+
+                <label for="registerUsername">Username</label>
+                <div class="auth-input-wrap">
+                    <span aria-hidden="true">♙</span>
+                    <input id="registerUsername" type="text" placeholder="Enter username" required>
+                </div>
+
+                <label for="email">Email</label>
+                <div class="auth-input-wrap">
+                    <span aria-hidden="true">✉</span>
+                    <input id="email" type="email" placeholder="Enter your email" required>
+                </div>
+
+                <label for="registerPassword">Password</label>
+                <div class="auth-input-wrap">
+                    <span aria-hidden="true">▣</span>
+                    <input id="registerPassword" type="password" placeholder="Create a password" required minlength="4">
+                    <button type="button" class="password-toggle" id="registerPasswordToggle" aria-label="Show password">◉</button>
+                </div>
+
+                <button class="btn btn-primary full-width" type="submit">Register</button>
+                <div id="registerMessage" class="form-message"></div>
+            </form>
+
+            <p class="auth-footer">
+                Already have an account? <a href="login.html">Login</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+ 
+ <script src="js/auth.js?v=2"></script>
+ 
+ </body>
+ </html>

@@ -1,0 +1,14 @@
+# .gitignore
+
+__pycache__/
+*.pyc
+.env
+screening.db
+
+uploads/documents/*
+uploads/faces/*
+
+venv/
+.venv/
+
+node_modules/
