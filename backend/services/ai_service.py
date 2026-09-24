@@ -1,7 +1,5 @@
 from pathlib import Path
 
-from ai_models.forgery_detector.predict_classifier import predict
-
 
 def detect_forgery(image_path):
     """
@@ -17,8 +15,15 @@ def detect_forgery(image_path):
             f"Image not found: {image_path}"
         )
 
-    # Use the exact same prediction function
-    # as the terminal test.
+    # Keep the lightweight API routes deployable without the local ML runtime.
+    try:
+        from ai_models.forgery_detector.predict_classifier import predict
+    except ImportError as error:
+        raise RuntimeError(
+            "The forgery model runtime is not installed in this deployment. "
+            "Run the AI backend locally or deploy it separately with TensorFlow."
+        ) from error
+
     prediction = predict(str(image_path))
 
     print("MODEL PREDICTION:", prediction)
